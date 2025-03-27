@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root "movies#index"
   # CREATE
   post("/movies", { :controller => "movies", :action => "create" })
+
+  get("/movies/new", { :controller => "movies", :action => "new" })
           
   # READ
   get("/movies", { :controller => "movies", :action => "index" })
@@ -13,6 +15,8 @@ Rails.application.routes.draw do
   # UPDATE
   
   patch("/movies/:id", { :controller => "movies", :action => "update" })
+
+  get("/movies/:id/edit", { :controller => "movies", :action => "edit" })
   
   # DELETE
   delete("/movies/:id", { :controller => "movies", :action => "destroy" })
